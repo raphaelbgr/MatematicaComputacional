@@ -1,0 +1,40 @@
+package main.trapezio;
+
+public class Trapezio {
+	public static void main(String [] args) {
+		System.out.println(multipleSegment());
+	}
+	
+	private static double multipleSegment() {
+		return trapm(10);
+	}
+	
+	private static double trapm(double n) {
+		double soma = f(0);
+		double h = 0.8 / n;
+		
+		for (int i = 1; i <= n -1 ; i++) {
+			soma = soma + (2 * f(i * h));
+		}
+		
+		soma = soma + f(0.8);
+		
+		return h * (soma / 2);
+	}
+
+	private static double f(double x) {
+		return 0.2 + 25*x - 200 * Math.pow(x, 2) + 675 * Math.pow(x, 3)
+				- 900 * Math.pow(x, 4) + 400 * Math.pow(x, 5);
+	}
+	
+	/**
+	 * 
+	 * @param h Tamanho do segmento
+	 * @param fn1 Tamanho do segmento vezes o penúltimo ponto de x em função de f
+	 * @param fn Ponto máximo no eixo x em função de f
+	 * @return
+	 */
+	public static double Trap(double h, double fn1, double fn) {
+		return h * (fn1 + fn) / 2;
+	}
+}

@@ -2,7 +2,7 @@ package main.simpson;
 
 import main.funcoes.Funcoes;
 import main.trapezio.Trapezio;
-import utils.Print;
+import utils.Printer;
 
 public class Simpson38 {
 
@@ -13,7 +13,7 @@ public class Simpson38 {
 		double h = 0.2; // n = 4 pontos igualmente espaçados
 		
 		System.out.println("======= Simpson 3/8 - Execução Única - 4 Pontos =======");
-		System.out.println("Result: " + Print.printError(simp38(h, f, seg1)));
+		System.out.println("Result: " + Printer.printError(simp38(h, f, seg1), Printer.DEFAULT_TARGET));
 		System.out.println();
 		
 		// Segmentos 2
@@ -21,11 +21,11 @@ public class Simpson38 {
 		double g[] = {Funcoes.f(0), Funcoes.f(0.16), Funcoes.f(0.32), Funcoes.f(0.48), Funcoes.f(0.64), Funcoes.f(0.8)}; // 6 segmentos
 		h = 0.16;
 		System.out.println("======= Simpson 3/8 - Execução Única - 5 Pontos =======");
-		System.out.println("Result: " + Print.printError(simp38(h, g, seg2)));
+		System.out.println("Result: " + Printer.printError(simp38(h, g, seg2), Printer.DEFAULT_TARGET));
 		System.out.println();
 		
 		System.out.println("======= Simpson 3/8 - Iterativo - 5 Pontos =======");
-		System.out.println("Result: " + Print.printError(SimpInt(seg2[0], seg2[5], 6)));
+		System.out.println("Result: " + Printer.printError(SimpInt(seg2[0], seg2[5], 6), Printer.DEFAULT_TARGET));
 	}
 	
 	// Formula de Simpson 3/8 - Única

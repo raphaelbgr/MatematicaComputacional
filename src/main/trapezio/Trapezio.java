@@ -1,5 +1,7 @@
 package main.trapezio;
 
+import main.funcoes.Funcoes;
+
 public class Trapezio {
 	public static void main(String [] args) {
 		System.out.println(multipleSegment());
@@ -36,5 +38,24 @@ public class Trapezio {
 	 */
 	public static double Trap(double h, double fn1, double fn) {
 		return h * (fn1 + fn) / 2;
+	}
+	
+	/**
+	 * 
+	 * @param n Número de segmentos
+	 * @param tam Tamanho do segmento
+	 * @return
+	 */
+	public static double trapmExercicio(double n, double tam) {
+		double soma = Funcoes.f2(0);
+		double h = tam / n;
+		
+		for (int i = 1; i <= n -1 ; i++) {
+			soma = soma + (2 * Funcoes.f2(i * h));
+		}
+		
+		soma = soma + Funcoes.f2(tam);
+		
+		return h * (soma / 2);
 	}
 }

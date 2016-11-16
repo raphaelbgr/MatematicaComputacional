@@ -47,5 +47,20 @@ public class Simpson13 {
 		soma = soma + (4 * Funcoes.f(n-h)) + Funcoes.f(n);
 		return h * (soma / 3);
 	}
+	
+	/**
+	 * 
+	 * @param h Tamanho do segmento
+	 * @param n Numero correspondente ao valor do ponto máximo no eixo x
+	 * @return
+	 */
+	public static double Simp13mExercicio(double h, double n) {
+		double soma = Funcoes.f2(0);
+		for (double i = h; i <= n - (2*h); i = i + (2*h)) {
+			soma = soma + (4 * Funcoes.f2(i)) + (2 * Funcoes.f2(i + h));
+		}
+		soma = soma + (4 * Funcoes.f2(n-h)) + Funcoes.f2(n);
+		return h * (soma / 3);
+	}
 
 }

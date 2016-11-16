@@ -40,11 +40,13 @@ public class Simpson13 {
 	 * @return
 	 */
 	public static double Simp13m(double h, double n) {
+		n = 20;
+		h = 0.8 / n;
 		double soma = Funcoes.f(0);
-		for (double i = h; i <= n - (2*h); i = i + (2*h)) {
-			soma = soma + (4 * Funcoes.f(i)) + (2 * Funcoes.f(i + h));
+		for (int i = 1; i <= n - 2; i += 2) {
+			soma = soma + (4 * Funcoes.f(i*h)) + (2 * Funcoes.f(i*h+h));
 		}
-		soma = soma + (4 * Funcoes.f(n-h)) + Funcoes.f(n);
+		soma = soma + (4 * Funcoes.f(0.8-h)) + Funcoes.f(0.8);
 		return h * (soma / 3);
 	}
 	
@@ -55,11 +57,13 @@ public class Simpson13 {
 	 * @return
 	 */
 	public static double Simp13mExercicio(double h, double n) {
+		n = 40;
+		h = 3 / n;
 		double soma = Funcoes.f2(0);
-		for (double i = h; i <= n - (2*h); i = i + (2*h)) {
-			soma = soma + (4 * Funcoes.f2(i)) + (2 * Funcoes.f2(i + h));
+		for (int i = 1; i <= n - 2; i += 2) {
+			soma = soma + (4 * Funcoes.f2(i*h)) + (2 * Funcoes.f2(i*h+h));
 		}
-		soma = soma + (4 * Funcoes.f2(n-h)) + Funcoes.f2(n);
+		soma = soma + (4 * Funcoes.f2(0.8-h)) + Funcoes.f2(0.8);
 		return h * (soma / 3);
 	}
 

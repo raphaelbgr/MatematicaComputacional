@@ -12,4 +12,15 @@ public class Funcoes {
 	public static double f2(double x) {
 		return Math.pow(x, 2) * Math.pow(Math.E, x);
 	}
+	
+	// Equação a ser utilizada para o Runge Kutta
+	public static double f3(double x, double y) {
+		return -2 * Math.pow(x, 3) + 12 * Math.pow(x, 2) - 20 * x + 8.5;
+	}
+	
+	// Equação f3 integrada
+	public static double f4(double x) {
+		return (-1 * (Math.pow(x, 4) / 2)) + (4 * Math.pow(x, 3)) 
+				- (10 * Math.pow(x, 2)) + (8.5 * x) + 1;
+	}
 }

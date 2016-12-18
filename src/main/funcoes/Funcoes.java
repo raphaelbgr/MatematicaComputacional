@@ -18,7 +18,7 @@ public class Funcoes {
 		return -2 * Math.pow(x, 3) + 12 * Math.pow(x, 2) - 20 * x + 8.5;
 	}
 	
-	// Equação f3 integrada
+	// Equação f3 integrada usada para o cálculo do erro, como dito no livro
 	public static double f4(double x) {
 		return (-1 * (Math.pow(x, 4) / 2)) + (4 * Math.pow(x, 3)) 
 				- (10 * Math.pow(x, 2)) + (8.5 * x) + 1;

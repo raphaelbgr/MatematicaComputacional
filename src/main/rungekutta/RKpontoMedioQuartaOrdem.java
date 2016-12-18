@@ -1,11 +1,10 @@
 package main.rungekutta;
 
-import java.text.DecimalFormat;
-
 import main.funcoes.Funcoes;
+import utils.Printer;
 
 /**
- * Página 626 do PDF -- Algoritmo de RK de segunda ordem
+ * Página 626 do PDF -- Algoritmo de RK de quarta ordem
  * @author md10
  *
  */
@@ -15,6 +14,8 @@ public class RKpontoMedioQuartaOrdem {
 		double h = 0.5;		//(b - a) / n;
 		double yi = 1;
 		
+		System.out.println("==== RungeKutta de Quarta Ordem ====");
+		System.out.println("==== Tabela do Livro para comparação de resultado ====");
 		System.out.println("x\t yVerd\t\ty\terro");
 		for (double i = 0; i <= 4.0; i += h) {
 			yv = Funcoes.f4(i);
@@ -27,29 +28,7 @@ public class RKpontoMedioQuartaOrdem {
 			double yant = yi; // y Antes de calcular yi
 			yi = yi + 1.0/6.0 * (k1 + 2*k2 + 2*k3 + k4) * h;
 			
-			print(i, yv, yant, ((yv - yant) / yv) * 100);
+			Printer.printTabelaRungeKutta4(i, yv, yant, ((yv - yant) / yv) * 100);
 		}
-	}
-	
-	private static void print(double i, double yv, double yant,
-			double error) {
-		
-		DecimalFormat df = new DecimalFormat("0.00");
-		String errorString = df.format(error);
-		
-		String output;
-		if (String.valueOf(yv).length() > 6) {
-			output = i + "\t " + yv + "\t";
-		} else {
-			output = i + "\t " + yv + "\t\t";
-		}
-		
-		if (String.valueOf(yant).length() > 6) {
-			output = output + yant + "\t" + errorString + "%";
-		} else {
-			output = output + yant + "\t" + errorString + "%";
-		}
-		
-		System.out.println(output);
 	}
 }

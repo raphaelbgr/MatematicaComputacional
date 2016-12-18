@@ -1,14 +1,18 @@
 package main.trapezio;
 
+import utils.Printer;
 import main.funcoes.Funcoes;
 
 public class Trapezio {
 	public static void main(String [] args) {
-		System.out.println(multipleSegment());
+		int trapezios = 10;
+		System.out.println("======= AlgorÃ­tmo do TrapÃ©zio de Segmentos MÃºltiplos"
+				+ " de 4 Pontos =======");
+		Printer.printError(multipleSegment(trapezios), Printer.DEFAULT_TARGET, trapezios);
 	}
 	
-	private static double multipleSegment() {
-		return trapm(10);
+	private static double multipleSegment(int trapezios) {
+		return trapm(trapezios);
 	}
 	
 	private static double trapm(double n) {
@@ -32,8 +36,8 @@ public class Trapezio {
 	/**
 	 * 
 	 * @param h Tamanho do segmento
-	 * @param fn1 Tamanho do segmento vezes o penúltimo ponto de x em função de f
-	 * @param fn Ponto máximo no eixo x em função de f
+	 * @param fn1 Tamanho do segmento vezes o penÃºltimo ponto de x em funÃ§Ã£o de f
+	 * @param fn Ponto mï¿½ximo no eixo x em funï¿½ï¿½o de f
 	 * @return
 	 */
 	public static double Trap(double h, double fn1, double fn) {
@@ -42,7 +46,7 @@ public class Trapezio {
 	
 	/**
 	 * 
-	 * @param n Número de segmentos
+	 * @param n NÃºmero de segmentos
 	 * @param tam Tamanho do segmento
 	 * @return
 	 */

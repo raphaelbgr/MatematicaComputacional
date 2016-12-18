@@ -1,32 +1,21 @@
 package main.simpson;
 
 import main.funcoes.Funcoes;
+import utils.Printer;
 
 public class Simpson13 {
-	
-	private static final double TARGET = 1.640533;
 
 	public static void main(String[] args) {
 		
 		double f0 = Funcoes.f(0), f1 = Funcoes.f(0.2), f2 = Funcoes.f(0.4), f3 = Funcoes.f(0.6), f4 = Funcoes.f(0.8);
 		double h = 0.2;
 		
-		System.out.println("======= Simpson 1/3 Execução Única =======");
-		System.out.println("Result: " + printError(simp13(h, f0, f1, f2, f3, f4)));
+		System.out.println("======= Simpson 1/3 ExecuÃ§Ã£o Ãšnica =======");
+		Printer.printError(simp13(h, f0, f1, f2, f3, f4));
 		System.out.println();
 		
 		System.out.println("======= Smp13m Algoritmo Iterativo =======");
-		System.out.println("Simp13m result: " + printError(Simp13m(h, 0.8)));
-	}
-	
-	private static double printError(double e) {
-		double m = TARGET - e; 			// Diferença do erro
-		double a = (e / TARGET) * 100;	// Percentual do acerto (Acurácia)
-		double p = 100 - a;				// Percentual do erro
-		
-		System.out.println("Diferença do erro: " + String.valueOf(m));
-		System.out.println("Percentual do erro: " + String.valueOf(p) + "%");
-		return e;
+		Printer.printError(Simp13m(h, 0.8));
 	}
 	
 	private static double simp13(double h, double f0,  double f1, double f2, double f3, double f4) {		
@@ -34,9 +23,11 @@ public class Simpson13 {
 	}
 	
 	/**
+	 * A funÃ§Ã£o estÃ¡ travada em h e n fixos, os parÃ¢metros nÃ£o funcionam
+	 * a nÃ£o ser que modificados por vocÃª - programador, rs
 	 * 
-	 * @param h Tamanho de cada segmento já calculado
-	 * @param n Numero correspondente ao valor do ponto máximo no eixo x
+	 * @param h Tamanho de cada segmento jï¿½ calculado
+	 * @param n Numero correspondente ao valor do ponto mï¿½ximo no eixo x
 	 * @return
 	 */
 	public static double Simp13m(double h, double n) {
@@ -51,9 +42,11 @@ public class Simpson13 {
 	}
 	
 	/**
+	 * A funÃ§Ã£o estÃ¡ travada em h e n fixos, os parÃ¢metros nÃ£o funcionam
+	 * a nÃ£o ser que modificados por vocÃª - programador, rs
 	 * 
 	 * @param h Tamanho do segmento
-	 * @param n Numero correspondente ao valor do ponto máximo no eixo x
+	 * @param n Numero correspondente ao valor do ponto mï¿½ximo no eixo x
 	 * @return
 	 */
 	public static double Simp13mExercicio(double h, double n) {

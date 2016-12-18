@@ -48,10 +48,7 @@ public class Simpson38 {
 	 * @param n Quantidade de segmentos
 	 */
 	private static double SimpInt(double a, double b, double n) {
-		/**
-		 * h Tamanho do segmento
-		 */
-		double h = (b - a) / n;
+		double h = (b - a) / n; // h Tamanho do segmento
 		double soma = 0;
 		if (n == 1) {
 			soma = Trapezio.Trap(h, Funcoes.f((n-1)*h), Funcoes.f(b));
